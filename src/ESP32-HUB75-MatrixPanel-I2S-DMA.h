@@ -179,7 +179,7 @@ struct rowBitStruct
 
 #endif
   }
-  ~rowBitStruct() { delete data; }
+  ~rowBitStruct() { heap_caps_free(data); }
 };
 
 /* frameStruct
