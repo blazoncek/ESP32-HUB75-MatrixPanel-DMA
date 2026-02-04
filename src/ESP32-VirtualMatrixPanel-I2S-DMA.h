@@ -439,9 +439,9 @@ inline void VirtualMatrixPanel::drawPixel(int16_t x, int16_t y, uint16_t color)
 		int16_t scaled_x_start_pos = x * _scale_factor;
 		int16_t scaled_y_start_pos = y * _scale_factor;
 		
-		for (int16_t x = 0; x < _scale_factor; x++) {
-			for (int16_t y = 0; y < _scale_factor; y++) {	
-				VirtualCoords result = this->getCoords(scaled_x_start_pos+x, scaled_y_start_pos+y);
+		for (int16_t i = 0; i < _scale_factor; i++) {
+			for (int16_t j = 0; j < _scale_factor; j++) {	
+				VirtualCoords result = this->getCoords(scaled_x_start_pos+i, scaled_y_start_pos+j);
 				// Serial.printf("Requested virtual x,y coord (%d, %d), got phyical chain coord of (%d,%d)\n", x,y, coords.x, coords.y);
 				this->display->drawPixel(result.x, result.y, color);
 			}
